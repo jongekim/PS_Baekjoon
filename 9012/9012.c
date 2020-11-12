@@ -6,6 +6,7 @@ int main()
 	int		num = 0;
 	int check = 0;
 	char	str[50];
+	int print_index = 0;
 
 
 	scanf("%d",&num);
@@ -13,6 +14,7 @@ int main()
 	for(int i = 0; i<num; i++)
 	{
 		check = 0;
+		print_index = 0;
 		scanf("%s",&str);
 		for (int j =0; str[j]; j++)
 		{
@@ -24,12 +26,13 @@ int main()
 			if(check < 0)
 			{
 				printf("NO\n");
-				return 0;
+				print_index = 1;
+				break;
 			}
 		}
-		if (check == 0)
+		if (check == 0 && print_index ==0)
 			printf("YES\n");
-		else
+		else if(print_index == 0 && check != 0)
 			printf("NO\n");
 	}
 
